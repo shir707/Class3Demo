@@ -5,16 +5,16 @@ public class Student {
     String name = "";
     String id = "";
     String phone="";
-    String addres="";
+    String address="";
     boolean flag = false;
 
     public Student(){}
-    public Student(String name, String id, boolean flag,String phone,String addres ) {
+    public Student(String name, String id, boolean flag,String phone,String address ) {
         this.name = name;
         this.id = id;
         this.flag = flag;
         this.phone=phone;
-        this.addres=addres;
+        this.address=address;
     }
 
     public void setId(String id) {
@@ -50,11 +50,11 @@ public class Student {
         this.phone = phone;
     }
 
-    public String getAddres() {
-        return addres;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAddres(String addres) {
-        this.addres = addres;
+    public void setAddress(String address) {
+        this.address = address;
     }
 }
