@@ -10,9 +10,16 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.class3demo.model.Model;
+import com.example.class3demo.model.Student;
+
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
     EditText nameEt;
     EditText idEt;
+    EditText phoneEt;
+    EditText adressEt;
     CheckBox cb;
 
     @Override
@@ -23,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
         nameEt=findViewById(R.id.main_name_et);
         idEt=findViewById((R.id.main_id_et));
         cb=findViewById(R.id.main_cb);
+        phoneEt=findViewById(R.id.main_phone_et);
+        adressEt=findViewById(R.id.main_address_et);
         Button saveBtn=findViewById(R.id.main_save_btn);
         Button cancelBtn=findViewById(R.id.main_cancel_btn);
 
@@ -52,8 +61,13 @@ public class MainActivity extends AppCompatActivity {
         String name=nameEt.getText().toString();
         String id=idEt.getText().toString();
         boolean flagCb=cb.isChecked();
+        String phone=phoneEt.getText().toString();
+        String address=adressEt.getText().toString();
+        Student s=new Student(name,id,flagCb,phone,address);
+        List<Student> data= Model.instance.getAllStudents();
+        data.add(s);
         //printing what we read from the user
-        Log.d("TAG","saved name: " +name + " id: "+ id + "flag: "+ flagCb);
+       
     }
 
 
