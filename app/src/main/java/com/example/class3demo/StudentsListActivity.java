@@ -43,12 +43,13 @@ Button add;
         ListView list=findViewById(R.id.studentlist_listv);
         MyAdapter adapter=new MyAdapter();
         list.setAdapter(adapter);
-
+        Intent intentDetails = new Intent(this, StudentDetailsActivity.class);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //if we click on row we get the id of the row
-                Log.d("TAG","click row"+ position);
+                intentDetails.putExtra("pos",position);
+                startActivity(intentDetails);             //   Log.d("TAG","click row"+ position);
             }
         });
     }
