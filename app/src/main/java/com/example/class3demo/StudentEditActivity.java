@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
@@ -18,7 +20,7 @@ public class StudentEditActivity extends AppCompatActivity {
     EditText phoneEt;
     EditText addressEt;
     CheckBox cb;
-
+        Button save,delete,cancle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,5 +41,43 @@ public class StudentEditActivity extends AppCompatActivity {
         phoneEt.setText(s.getPhone());
         addressEt=findViewById(R.id.edit_address_et);
         addressEt.setText(s.getAddress());
+        Intent back=new Intent(this,StudentsListActivity.class);
+        cancle=findViewById(R.id.edit_cancel_btn);
+        cancle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(back);
+            }
+        });
+        save=findViewById(R.id.edit_save_btn);
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /*
+                String name=nameEt.getText().toString();
+                String id=idEt.getText().toString();
+                boolean flagCb=cb.isChecked();
+                String phone=phoneEt.getText().toString();
+                String address=addressEt.getText().toString();
+                Student s=new Student(name,id,flagCb,phone,address);
+                data.set(pos,s);*/
+                Student s=data.get(pos);
+                s.setFlag(cb.isChecked());
+                s.setAddress(addressEt.getText().toString());
+                s.setId(idEt.getText().toString());
+                s.setName(nameEt.getText().toString());
+                s.setPhone(phoneEt.getText().toString());
+                startActivity(back);
+            }
+        });
+        delete=findViewById(R.id.edit_deleteButton);
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                data.remove(pos);
+                startActivity(back);
+
+            }
+        });
     }
 }

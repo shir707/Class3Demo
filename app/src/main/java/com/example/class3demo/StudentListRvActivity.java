@@ -32,13 +32,15 @@ public class StudentListRvActivity extends AppCompatActivity {
         list.setLayoutManager(new LinearLayoutManager(this));
         MyAdapter adapter=new MyAdapter();
         list.setAdapter(adapter);
-
         adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
                 Log.d("TAG","row was clicked"+position);
             }
         });
+
+
+
     }
     class MyViewHolder extends RecyclerView.ViewHolder{
         TextView nameTv;
@@ -54,7 +56,9 @@ public class StudentListRvActivity extends AppCompatActivity {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
                     int pos=getAdapterPosition();
+                    Log.d("TAG","the pos is"+pos);
                     listener.onItemClick(pos);
                 }
             });

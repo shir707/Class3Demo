@@ -6,6 +6,8 @@ import java.util.List;
 public class Model {
     public static final Model instance=new Model();
     private Model(){
+        Student s=new Student("name", "11"+0,false,"dd","aa");
+        data.add(s);
       /* for(int i=0; i<100;i++){
             Student s=new Student("name", ""+i,false);
             data.add(s);

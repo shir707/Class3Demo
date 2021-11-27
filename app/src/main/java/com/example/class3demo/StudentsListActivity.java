@@ -35,6 +35,7 @@ Button add;
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 startActivity(intent);
 
             }
@@ -48,8 +49,9 @@ Button add;
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //if we click on row we get the id of the row
+                Log.d("Guy","cbn position"+ position);
                 intentDetails.putExtra("pos",position);
-                startActivity(intentDetails);             //   Log.d("TAG","click row"+ position);
+                startActivity(intentDetails);
             }
         });
     }
@@ -78,7 +80,7 @@ Button add;
                 LayoutInflater inflater = getLayoutInflater();
                 //we create the convert view
                 convertView = inflater.inflate(R.layout.student_list_row, null);
-                CheckBox cb=convertView.findViewById(R.id.listrow_cb);
+                /*CheckBox cb=convertView.findViewById(R.id.listrow_cb);
                 cb.setOnClickListener(new View.OnClickListener() {
                                           @Override
                                           public void onClick(View v) {
@@ -89,9 +91,10 @@ Button add;
                                              Student s=data.get(pos);
                                              s.setFlag(cb.isChecked());
                                           }
-                                      });
+                                      });*/
                         //the student that we get in position
                         Student student = data.get(position);
+
             }
                 //get the reference to the text view in row
                 TextView nameTv=convertView.findViewById(R.id.listrow_name_tv);
