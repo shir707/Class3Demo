@@ -3,12 +3,10 @@ package com.example.class3demo;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.example.class3demo.model.Model;
 import com.example.class3demo.model.Student;
