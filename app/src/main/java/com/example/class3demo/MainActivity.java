@@ -2,6 +2,7 @@ package com.example.class3demo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -64,7 +65,8 @@ public class MainActivity extends AppCompatActivity {
         Student s=new Student(name,id,flagCb,phone,address);
         List<Student> data= Model.instance.getAllStudents();
         data.add(s);
-        //printing what we read from the user
+        Intent intent=new Intent(this,StudentsListActivity.class);
+        startActivity(intent);
        
     }
 
