@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     EditText nameEt;
     EditText idEt;
     EditText phoneEt;
-    EditText adressEt;
+    EditText addressEt;
     CheckBox cb;
 
     @Override
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         idEt=findViewById((R.id.main_id_et));
         cb=findViewById(R.id.main_cb);
         phoneEt=findViewById(R.id.main_phone_et);
-        adressEt=findViewById(R.id.main_address_et);
+        addressEt=findViewById(R.id.main_address_et);
         Button saveBtn=findViewById(R.id.main_save_btn);
         Button cancelBtn=findViewById(R.id.main_cancel_btn);
 
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         String id=idEt.getText().toString();
         boolean flagCb=cb.isChecked();
         String phone=phoneEt.getText().toString();
-        String address=adressEt.getText().toString();
+        String address=addressEt.getText().toString();
         Student s=new Student(name,id,flagCb,phone,address);
         List<Student> data= Model.instance.getAllStudents();
         data.add(s);
